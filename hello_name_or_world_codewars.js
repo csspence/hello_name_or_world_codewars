@@ -11,6 +11,18 @@ hello          => "Hello, World!" # name not given
 hello ''       => "Hello, World!" # name is an empty String
 */
 
-function hello(name) {
-  return '';
+const hello = (name) => {
+  if(name === '' || name === null || name === undefined) {
+    return "Hello, World!";
+  } else {
+    let newName = '';
+    for(let i = 0; i < name.length; i++) {
+      if(i === 0) {
+        newName += name[i].toUpperCase();
+      } else {
+        newName += name[i].toLowerCase();
+      }
+    }
+    return "Hello, " + newName + "!";
+  }
 }
